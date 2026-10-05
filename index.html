@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>Секретик</title>
+    
+    <style>
+        body{
+          font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .tex{
+          font-size: 300%;
+          transition: 0.5s;
+        }
+        .tex:hover{
+          font-size: 350%;
+        }
+        .predlo{
+          width: 200px;
+          height: 200px;
+          text-decoration: none;
+          color: white;
+          background-color: green;
+          border: 0cap;
+          border-radius: 10%;
+          transition: 0.5s;
+        }
+        .predlo:hover{
+          background-color: rgb(0, 99, 0);
+          width: 230px;
+          height: 230px;
+          font-size: 3rem;
+        }
+        .predlo:active{
+          background-color: rgb(0, 0, 0);
+          width: 230px;
+          height: 230px;
+          font-size: 3rem;
+        }
+
+        .pred{
+          width: 200px;
+          height: 200px;
+          color: white;
+          background-color: red;
+          border: 0cap;
+          border-radius: 10%;
+          transition: 0.5s;
+        }
+        .pred:hover{
+          background-color: rgb(167, 0, 0);
+          width: 230px;
+          height: 230px;
+          font-size: 3rem;
+        }
+        .pred:active{
+          background-color: rgb(0, 0, 0);
+          width: 230px;
+          height: 230px;
+          font-size: 3rem;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="kartinka" align="center">
+      <img src="https://i.pinimg.com/originals/93/1b/a2/931ba216c319766e5ba9673ca75b8d0e.gif" alt="классная фотка" width="500" id="im">
+    </div>
+    <div class="tex" align="center">
+      <p id="te">Будешь моей Валентинкой????????</p>
+    </div>
+    <div class="predl" align="center">
+      <button class="predlo" id="yes">
+        YES
+      </button>
+      <button class="pred" id="no">
+        no
+      </button>
+    </div>
+</body>
+
+<script>
+  var tttt = document.getElementById('te');
+  let yes = document.getElementById("yes");
+  let kol = 0;
+  let im = document.getElementById('im');
+
+  
+
+  var audio1 = new Audio(); 
+	audio1.src = 'https://www.dropbox.com/scl/fi/qzv3jrovpjvdf5ukrkodj/cool.mp3?rlkey=j1r7bqfnk445x2wwcgwx18ah9&st=be4d350p&dl=1'; 
+
+
+
+  var audio = new Audio();
+	audio.src = 'https://www.dropbox.com/scl/fi/k1ju7yrcpq112djx7p3h2/plack.mp3.mp3?rlkey=xdhl082igc1h2wuu4yp4b4i8g&st=idlsm0th&dl=1'; 
+
+
+  document.getElementById("yes").onclick = function(){
+    tttt.textContent = "я пошутил, знаю, что нет";
+    yes.textContent = '=3';
+    no.textContent = '=3';
+    yes.style.fontSize = (60)+"px"
+    no.style.fontSize = (60)+"px"
+    audio1.play(); 
+    audio.pause();
+    document.getElementById('im').src = 'https://i.pinimg.com/originals/f6/5a/bf/f65abf1a75e1575890041673ce84e385.png'
+    yes.style.width = (200 )+"px" 
+    yes.style.height = (200 )+"px"
+    no.style.width = (200 )+"px" 
+    no.style.height = (200 )+"px"
+    
+
+  }
+  document.getElementById("no").onclick = function(){
+    no.textContent = 'no'+ '\n'+ '(обидно' + ' x '+(kol)+ ')';
+    audio.play();
+    audio1.pause(); 
+    kol+=1;
+    tttt.textContent = "Ты так жестока, но несмотря на боль, снова спрошу, будешь?";
+    yes.textContent = 'YES';
+    yes.style.width = (200 + 10 * kol)+"px" 
+    yes.style.height = (200 + 10 * kol)+"px"
+    no.style.width = (200 - 5 * kol)+"px" 
+    no.style.height = (200 - 5 * kol)+"px"
+    yes.style.fontSize = (20 + 1 * kol)+"px"
+    no.style.fontSize = (16)+"px"
+    document.getElementById('im').src = 'https://avatars.dzeninfra.ru/get-zen_doc/1712263/pub_5d2f07b625667300adfb74ba_5d2f081ba1b4f100ac2c136f/scale_1200'
+  }
+
+</script>
+
+</html>
